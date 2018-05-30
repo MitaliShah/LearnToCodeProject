@@ -31,7 +31,20 @@ var mainButton = document.querySelector(".roll-button");
 //Listens for the click on the button and takes random elements from each array
 mainButton.addEventListener("click", function() {
   var firstSection = document.querySelector(".section-2");
+  var secondSection = document.querySelector(".section-3");
 
+    var imgArray = ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg", "img5.jpeg"];
+	var basePath="./images";
+  
+  function imgRandom() {
+    for (var i = 0; i <= 5; i++) {
+        var random = imgArray[Math.floor(Math.random() * imgArray.length)];
+     
+		secondSection.innerHTML = `image: ${random}`;
+    }
+}
+  imgRandom()
+  
   var firstRandom = mySpecies[Math.floor(Math.random() * mySpecies.length)];
   console.log(firstRandom);
   var secondRandom = myClass[Math.floor(Math.random() * myClass.length)];
